@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <style>
+        /* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* light grey */
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #007bff; /* blue color */
+    margin-top: 30px;
+}
+
+/* Link Styles */
+a {
+    color: #007bff; /* blue color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* smooth color transition */
+}
+
+a:hover {
+    color: #0056b3; /* darker blue on hover */
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* smooth transform transition */
+}
+
+li:hover {
+    transform: translateX(5px); /* move list item 5px to the right on hover */
+}
+
+/* Footer
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Portfolio</h1>
+    <h2><a href="{% url 'projects' %}"> Project:</a></h2>
+    <ul>
+        {% for project in projects %}
+        <li>{{ project.title }} - {{ project.description }}</li>
+        {% endfor %}
+    </ul>
+    <h2><a href="{% url 'skills' %}"> Skill:</a></h2>
+    <ul>
+        {% for skill in skills %}
+        <li>{{ skill.name }} - {{ skill.description }} ({{ skill.percentage }}%)</li>
+        {% endfor %}
+    </ul>
+    
+
+    <h2><a href="{% url 'blog' %}"> Blog:</a></h2>
+    {% for blog in blogs %}
+    <li><a href="{% url 'blog_detail' blog.slug %}">{{ blog.title }}</a></li>
+    {% endfor %}
+
+
+    <h2>Footer</h2>
+    <a href="{% url 'contact' %}">Contact</a><br>
+    <a href="{% url 'about' %}">About</a>
+</body>
+</html>

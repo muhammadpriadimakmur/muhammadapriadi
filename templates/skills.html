@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <style>
+        /* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Skill Styles */
+.skill-name {
+    font-weight: bold;
+}
+
+.skill-percentage {
+    color: #007bff; /* blue color */
+}
+
+    </style>
+</head>
+<body>
+    <h1>Skills</h1>
+    <ul>
+        {% for skill in skills %}
+        <li>{{ skill.name }} - {{ skill.description }} ({{ skill.percentage }}%)</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
